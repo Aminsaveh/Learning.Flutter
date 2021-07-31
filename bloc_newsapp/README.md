@@ -6,7 +6,6 @@ Flutter News App with NewsApi.org - BLoC, RxDart, JSON API Complete App
 
 This project is a starting point for learning Bloc practically
 
-Sources : 
+Source: 
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+- [Implementation](https://www.youtube.com/watch?v=M8gRcFRdhxo)
