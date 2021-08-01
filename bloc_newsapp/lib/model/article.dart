@@ -1,4 +1,7 @@
+import 'package:bloc_newsapp/model/source.dart';
+
 class ArticleModel {
+  final SourceModel source;
   final String author;
   final String title;
   final String description;
@@ -8,7 +11,8 @@ class ArticleModel {
   final String content;
 
   ArticleModel(
-      {required this.author,
+      {required this.source,
+      required this.author,
       required this.title,
       required this.content,
       required this.date,
@@ -16,11 +20,12 @@ class ArticleModel {
       required this.img,
       required this.url});
   ArticleModel.fromJson(Map<String, dynamic> json)
-      : author = json["author"],
+      : source = SourceModel.fromJson(json['source']),
+        author = json["author"] == null ? '' : json["author"],
         title = json["title"],
         description = json["description"],
         url = json["url"],
-        img = json["utlToImage"],
+        img = json["urlToImage"],
         date = json["publishedAt"],
         content = json["content"];
 }

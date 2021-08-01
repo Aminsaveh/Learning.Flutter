@@ -17,11 +17,11 @@ class SourceModel {
       required this.url});
 
   SourceModel.fromJson(Map<String, dynamic> json)
-      : id = json['id'],
-        name = json['name'],
-        description = json['description'],
-        url = json['url'],
-        category = json['category'],
-        country = json['country'],
-        language = json['language'];
+      : id = json['id'] == null ? '' : json['id'],
+        name = json['name'] == null ? '' : json['name'],
+        description = json['description'] == null ? '' : json['description'],
+        url = json['url'] == null ? '' : json['url'],
+        category = json['category'] == null ? '' : json['category'],
+        country = json['country'] == null ? '' : json['country'],
+        language = json['language'] == null ? '' : json['language'];
 }

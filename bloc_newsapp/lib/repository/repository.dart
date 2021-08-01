@@ -3,7 +3,7 @@ import 'package:bloc_newsapp/model/source_response.dart';
 import 'package:dio/dio.dart';
 
 class NewsRepository {
-  static String mainUrl = 'https://newsapi.org/v2';
+  static String mainUrl = 'https://newsapi.org/v2/';
   final String apiKey = '5f18a4778c744b43b524e158bd3e93e5';
 
   final Dio _dio = Dio();
@@ -27,10 +27,13 @@ class NewsRepository {
   Future<ArticleResponse> getTopHeadLines() async {
     var params = {'apikey': apiKey, 'country': 'us'};
     try {
+      print('hi');
       Response response =
           await _dio.get(getTopHeadLinesUrl, queryParameters: params);
+      print('hi');
       return ArticleResponse.fromJson(response.data);
     } catch (error) {
+      print(error);
       return ArticleResponse.withError(error.toString());
     }
   }

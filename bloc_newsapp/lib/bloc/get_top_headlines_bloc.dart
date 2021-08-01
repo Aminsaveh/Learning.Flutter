@@ -19,4 +19,4 @@ class GetTopHeadlinesBloc {
   BehaviorSubject<ArticleResponse> get subject => _subject;
 }
 
-final GetTopHeadlinesBloc getTopHeadlinesBloc = GetTopHeadlinesBloc();
+final getTopHeadlinesBloc = GetTopHeadlinesBloc();
