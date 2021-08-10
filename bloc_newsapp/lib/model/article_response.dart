@@ -1,7 +1,7 @@
 import 'package:bloc_newsapp/model/article.dart';
 
 class ArticleResponse {
-  final List<ArticleModel> articles;
+  final List<ArticleModel>? articles;
   final String error;
 
   ArticleResponse({required this.articles, required this.error});

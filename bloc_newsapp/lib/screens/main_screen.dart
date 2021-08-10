@@ -1,5 +1,7 @@
 import 'package:bloc_newsapp/bloc/bottom_navbar_bloc.dart';
 import 'package:bloc_newsapp/screens/tabs/home_screen.dart';
+import 'package:bloc_newsapp/screens/tabs/search_screen.dart';
+import 'package:bloc_newsapp/screens/tabs/sources_screen.dart';
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter/material.dart';
 import 'package:bloc_newsapp/style/theme.dart' as Style;
@@ -42,9 +44,9 @@ class _MainScreenState extends State<MainScreen> {
               case NavBarItem.HOME:
                 return HomeScreen();
               case NavBarItem.SEARCH:
-                return testScreen();
+                return SearchScreen();
               case NavBarItem.SOURCES:
-                return testScreen();
+                return SourcesScreen();
               default:
                 return testScreen();
             }

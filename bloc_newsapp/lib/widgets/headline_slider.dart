@@ -3,6 +3,7 @@ import 'package:bloc_newsapp/elements/error_element.dart';
 import 'package:bloc_newsapp/elements/loader_element.dart';
 import 'package:bloc_newsapp/model/article.dart';
 import 'package:bloc_newsapp/model/article_response.dart';
+import 'package:bloc_newsapp/screens/news_detail.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 
@@ -42,7 +43,7 @@ class _HeadlineSliderWidgetState extends State<HeadlineSliderWidget> {
   }
 
   Widget _buildHeadlineSlider(ArticleResponse? data) {
-    List<ArticleModel> articles = data!.articles;
+    List<ArticleModel>? articles = data!.articles;
     return Container(
       child: CarouselSlider(
           options: CarouselOptions(
@@ -50,14 +51,18 @@ class _HeadlineSliderWidgetState extends State<HeadlineSliderWidget> {
               enlargeCenterPage: false,
               height: 200.0,
               viewportFraction: 0.9),
-          items: getExpenseSliders(articles)),
+          items: getExpenseSliders(articles!)),
     );
   }
 
   getExpenseSliders(List<ArticleModel> articles) {
     return articles
         .map((article) => GestureDetector(
-              onTap: () {},
+              onTap: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) {
+                  return NewsDetail(article: article);
+                }));
+              },
               child: Container(
                 padding: EdgeInsets.only(
                   left: 5,
@@ -73,7 +78,9 @@ class _HeadlineSliderWidgetState extends State<HeadlineSliderWidget> {
                         shape: BoxShape.rectangle,
                         image: DecorationImage(
                           fit: BoxFit.cover,
-                          image: NetworkImage(article.img) as ImageProvider,
+                          image: article.img == null
+                              ? AssetImage("assets/img/placeholder.png")
+                              : NetworkImage(article.img) as ImageProvider,
                         ),
                       ),
                     ),

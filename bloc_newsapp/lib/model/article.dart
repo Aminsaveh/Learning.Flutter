@@ -22,10 +22,10 @@ class ArticleModel {
   ArticleModel.fromJson(Map<String, dynamic> json)
       : source = SourceModel.fromJson(json['source']),
         author = json["author"] == null ? '' : json["author"],
-        title = json["title"],
-        description = json["description"],
-        url = json["url"],
-        img = json["urlToImage"],
-        date = json["publishedAt"],
-        content = json["content"];
+        title = json["title"] == null ? '' : json["title"],
+        description = json["description"] == null ? '' : json["description"],
+        url = json["url"] == null ? '' : json["url"],
+        img = json["urlToImage"] == null ? '' : json["urlToImage"],
+        date = json["publishedAt"] == null ? '' : json["publishedAt"],
+        content = json["content"] == null ? '' : json["content"];
 }

@@ -26,4 +26,4 @@ class GetSourceNewsBloc {
   BehaviorSubject<ArticleResponse?> get subject => _subject;
 }
 
-final GetSourceNewsBloc getSourceNewsBloc = GetSourceNewsBloc();
+final getSourceNewsBloc = GetSourceNewsBloc();

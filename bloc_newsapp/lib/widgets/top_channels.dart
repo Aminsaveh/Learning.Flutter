@@ -4,6 +4,7 @@ import 'package:bloc_newsapp/elements/error_element.dart';
 import 'package:bloc_newsapp/elements/loader_element.dart';
 import 'package:bloc_newsapp/model/source.dart';
 import 'package:bloc_newsapp/model/source_response.dart';
+import 'package:bloc_newsapp/screens/source_detail.dart';
 import 'package:flutter/material.dart';
 
 class TopChannel extends StatefulWidget {
@@ -62,7 +63,11 @@ class _TopChannelState extends State<TopChannel> {
               ),
               width: 80.0,
               child: GestureDetector(
-                onTap: () {},
+                onTap: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) {
+                    return SourceDetail(source: sources[index]);
+                  }));
+                },
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [

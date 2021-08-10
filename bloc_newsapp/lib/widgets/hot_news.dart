@@ -3,6 +3,7 @@ import 'package:bloc_newsapp/elements/error_element.dart';
 import 'package:bloc_newsapp/elements/loader_element.dart';
 import 'package:bloc_newsapp/model/article.dart';
 import 'package:bloc_newsapp/model/article_response.dart';
+import 'package:bloc_newsapp/screens/news_detail.dart';
 import 'package:flutter/material.dart';
 import 'package:bloc_newsapp/style/theme.dart' as Style;
 import 'package:timeago/timeago.dart' as timeago;
@@ -42,8 +43,8 @@ class _HotNewsState extends State<HotNews> {
   }
 
   Widget _buildHotNews(ArticleResponse? data) {
-    List<ArticleModel> articles = data!.articles;
-    if (articles.length == 0) {
+    List<ArticleModel>? articles = data!.articles;
+    if (articles!.length == 0) {
       return Container(
         width: MediaQuery.of(context).size.width,
         child: Column(
@@ -70,7 +71,11 @@ class _HotNewsState extends State<HotNews> {
             return Padding(
               padding: EdgeInsets.only(left: 5, right: 5, top: 10),
               child: GestureDetector(
-                onTap: () {},
+                onTap: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) {
+                    return NewsDetail(article: articles[index]);
+                  }));
+                },
                 child: Container(
                   width: 220.0,
                   decoration: BoxDecoration(
@@ -95,7 +100,7 @@ class _HotNewsState extends State<HotNews> {
                                   topRight: Radius.circular(5.0)),
                               image: DecorationImage(
                                   image: articles[index].img == null
-                                      ? AssetImage("aseets/img/placeholder.jpg")
+                                      ? AssetImage("assets/img/placeholder.png")
                                       : NetworkImage(articles[index].img)
                                           as ImageProvider,
                                   fit: BoxFit.cover)),
