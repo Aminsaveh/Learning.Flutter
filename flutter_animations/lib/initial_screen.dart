@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:working_with_animation/item.dart';
+import 'package:flutter_animations/item.dart';
 
 class InitialScreen extends StatefulWidget {
   const InitialScreen({Key? key}) : super(key: key);
@@ -81,7 +81,6 @@ class _InitialScreenState extends State<InitialScreen> {
     keys[index].currentState!.changeDirection(side);
     index--;
     await Future.delayed(Duration(seconds: 1)).then((value) {
-      print(value);
       keys.removeAt(index + 1);
       items.removeAt(index + 1);
     });

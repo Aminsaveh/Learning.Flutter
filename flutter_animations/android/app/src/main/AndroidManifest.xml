@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.working_with_animation">
+    package="com.example.flutter_animations">
    <application
-        android:label="working_with_animation"
+        android:label="flutter_animations"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"

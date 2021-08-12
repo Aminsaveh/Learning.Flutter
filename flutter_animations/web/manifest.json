@@ -1,6 +1,6 @@
 {
-    "name": "working_with_animation",
-    "short_name": "working_with_animation",
+    "name": "flutter_animations",
+    "short_name": "flutter_animations",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

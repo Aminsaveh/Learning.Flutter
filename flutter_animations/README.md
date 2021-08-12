@@ -1,4 +1,4 @@
-# working_with_animation
+# flutter_animations
 
 A new Flutter project.
 
